@@ -3,6 +3,8 @@ package vyanjan.com.vyanjanModels;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import lombok.Data;
 
 @Entity
@@ -23,4 +25,7 @@ public class user {
 	private String profilePicName;
 	private String profilePicFileType;
 	private String profilePicFilePath;
+	@OneToMany
+	@JoinColumn(name="orderId")
+	private order order;
 }

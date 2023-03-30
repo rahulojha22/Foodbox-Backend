@@ -6,13 +6,13 @@ import java.util.List;
 import org.springframework.web.multipart.MultipartFile;
 
 import vyanjan.com.vyanjanModels.carousel;
-import vyanjan.com.vyanjanModels.product;
+import vyanjan.com.vyanjanModels.carouselImage;
 
-public interface adminImpl {
+public interface carouselImpl {
 	
-	public product addProduct(product product, MultipartFile productImage) throws IllegalStateException, IOException;
-	public List<product> getAllProducts();
+	public String uploadCarousel(MultipartFile carouselFile) throws IllegalStateException, IOException;
+	public byte[] downloadCarousel(String carouselName) throws IOException;
 	public carousel addCarousel(carousel carousel, MultipartFile carouselImage) throws IllegalStateException, IOException;
 	public List<carousel> getAllCarousel();
-
+	public List<carouselImage> getActiveCarousel() throws IOException;
 }
