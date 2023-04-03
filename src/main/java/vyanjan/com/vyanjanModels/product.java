@@ -17,6 +17,7 @@ public class product {
 	private String productCategory;
 	private int productBasePrice;
 	private String pricingMethod;
+	private int minOrder;
 	private String productDescription;
 	private String productInstructions;
 	private boolean productActive;

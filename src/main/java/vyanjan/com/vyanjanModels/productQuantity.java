@@ -3,8 +3,7 @@ package vyanjan.com.vyanjanModels;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,10 +12,15 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class order {
+public class productQuantity {
 	@Id
-	private String orderId;
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name="userID")
-	private user user;
+	private Long pqId;
+	
+	@OneToOne(fetch = FetchType.EAGER)
+	private product product;
+	
+	private int productQuantity;
+	//This price is for unit quantity
+	private int sellingPrice;
+
 }
