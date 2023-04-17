@@ -21,7 +21,7 @@ public class publicDao implements publicImpl {
 
 	@Override
 	public Optional<user> userLogin(user user) {
-		return userRepo.findUserByuserMobNumber(12345);
+		return userRepo.findUserByUserMobNumber(12345);
 	}
 
 }

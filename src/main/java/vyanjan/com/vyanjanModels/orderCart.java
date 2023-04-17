@@ -1,11 +1,16 @@
 package vyanjan.com.vyanjanModels;
 
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
@@ -18,12 +23,15 @@ import lombok.NoArgsConstructor;
 @Entity
 public class orderCart {
 	@Id
-	private String cartId;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long cartId;
 	
-	@OneToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	private user user;
 	
-	@OneToMany(fetch = FetchType.LAZY)
-	private Set<productQuantity> productQuantityList = new HashSet<productQuantity>();
+	@ManyToOne(fetch = FetchType.EAGER)
+	private product product;
+	
+	private int productQuantity;
 	
 }

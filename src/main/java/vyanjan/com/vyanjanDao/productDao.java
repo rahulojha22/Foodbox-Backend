@@ -30,6 +30,8 @@ public class productDao implements productImpl {
 			activeProduct.setProductCategory(product.getProductCategory());
 			activeProduct.setProductBasePrice(product.getProductBasePrice());
 			activeProduct.setPricingMethod(product.getPricingMethod());
+			activeProduct.setMinOrder(product.getMinOrder());
+			activeProduct.setOrderSteps(product.getOrderSteps());
 			activeProduct.setProductDescription(product.getProductDescription());
 			activeProduct.setProductInstructions(product.getProductInstructions());
 			activeProduct.setProductImageType(product.getProductImageType());

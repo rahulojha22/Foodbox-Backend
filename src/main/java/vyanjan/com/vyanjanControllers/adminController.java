@@ -33,35 +33,6 @@ public class adminController {
 	@Autowired
 	adminDao adminDao;
 	
-//	@PostMapping("/uploadCarousel")
-//	public ResponseEntity<?> uploadCarousel(@RequestParam("carouselImage") MultipartFile carouselFile) throws IllegalStateException, IOException {
-//		String uploadCarouselFile = carouselDao.uploadCarousel(carouselFile);
-//		return ResponseEntity.status(HttpStatus.OK).body(uploadCarouselFile);
-//	}
-//	
-//	@GetMapping("/downloadCarousel/{carouselName}")
-//	public ResponseEntity<?> downloadCarousel(@PathVariable("carouselName") String carouselName) throws IOException{
-//		byte[] carouselImage = carouselDao.downloadCarousel(carouselName);
-//		return ResponseEntity.status(HttpStatus.OK).contentType(MediaType.valueOf("image/png")).body(carouselImage);
-//	}
-//	
-//	@PostMapping(value="/uploadCarouselImage", consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
-//	public ResponseEntity<?> uploadCarouselImage(@RequestPart("carousel") carousel carousel,
-//												@RequestPart("carouselImage") MultipartFile carouselFile) throws IllegalStateException, IOException{
-//		System.out.println(carousel);
-//		String uploadCarouselFile = carouselDao.uploadCarousel(carouselFile);
-//		return ResponseEntity.status(HttpStatus.OK).body("image uploaded");
-//	}
-//	
-//	@GetMapping("/downloadCarouselImage/{carouselName}")
-//	public ResponseEntity<?> downloadCarouselImage(@PathVariable("carouselName") String carouselName) throws IOException{
-//		byte[] carouselImage = carouselDao.downloadCarousel(carouselName);
-//		downloadCarousel1 downloadCarousel1 = new downloadCarousel1();
-//		downloadCarousel1.setCarouselName(carouselName);
-//		downloadCarousel1.setPicByte(carouselImage);
-//		return ResponseEntity.status(HttpStatus.OK).body(downloadCarousel1);
-//	}
-	
 	@PostMapping(value="/addProduct", consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
 	public product addProduct(@RequestPart("productData") product product,
 										@RequestPart("productImage") MultipartFile productImage) throws IllegalStateException, IOException{
